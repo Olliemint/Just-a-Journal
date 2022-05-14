@@ -33,6 +33,9 @@ def home():
 
 @app.route('/register',methods=['GET','POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+        
    
     
     form = Register()
@@ -51,8 +54,9 @@ def register():
 
 @app.route('/login',methods=['GET','POST'])
 def login():
+    
     if current_user.is_authenticated:
-        return redirect(url_for('home')) 
+        return redirect(url_for('home'))
     
     form = Login()
     if form.validate_on_submit():
@@ -61,9 +65,11 @@ def login():
             login_user(user, remember= form.remember.data)
             next_page = request.args.get('next')
             return redirect(next_page) if next_page else redirect(url_for('home'))
+            
         
         else:
             flash('Login error!!. Enter correct email and password','danger')
             
             
     return render_template('login.html',form = form)
+  
