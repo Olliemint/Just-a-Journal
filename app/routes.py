@@ -1,8 +1,8 @@
-from app import app
-from app.form import Register
-
-from flask import render_template,url_for,flash,redirect
-#from flask_login import login_user,current_user,logout_user,login_required
+from app import app,db,bcrypt
+from app.form import Register,Login
+from app.models import User,Blog
+from flask import render_template,url_for,flash,redirect,request
+from flask_login import login_user,current_user,logout_user,login_required
 
 
 
@@ -42,3 +42,23 @@ def register():
         return redirect(url_for('home'))
     
     return render_template('register.html',form= form)
+
+
+@app.route('/login',methods=['GET','POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home')) 
+    
+    form = Login()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember= form.remember.data)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('home'))
+        
+        else:
+            flash('Login error!!. Enter correct email and password','danger')
+            
+            
+    return render_template('login.html',form = form)
