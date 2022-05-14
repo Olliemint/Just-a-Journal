@@ -2,5 +2,15 @@
 
 {% block content %}
 
+{% for post in posts %}
 
-{% endblock %}}
+<div class="card" style="width: 25rem;">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <p>{{post.date_posted}}</p>
+
+</div>
+{% endfor %}
+
+
+{% endblock %}

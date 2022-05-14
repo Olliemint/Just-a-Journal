@@ -1,4 +1,4 @@
-from re import T
+from datetime import datetime
 from app.models import db
 
 
@@ -19,4 +19,13 @@ class Blog(db.Model):
     title = db.Column(db.String,nullable=False)
     category = db.Column(db.String,nullable=False)
     content = db.Column(db.String,nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)    
+    image = db.Column(db.String(60), nullable=False, default ='default.jpg')
+    posted = db.Column(db.DateTime,nullable = False, default = datetime.utcnow)
+    
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
+    
+    
+    
+    def __repr__(self):
+        
+        return f"User('{self.title}','{self.category}','{self.content}','{self.posted}')"    
