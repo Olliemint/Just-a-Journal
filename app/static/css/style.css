@@ -30,3 +30,10 @@ html{
     width: 40%;
    
   }
+  .profile{
+      margin-top: 10%;
+  }
+  .center{
+      display: grid;
+      place-content: center;
+  }

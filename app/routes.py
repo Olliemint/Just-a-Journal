@@ -72,4 +72,23 @@ def login():
             
             
     return render_template('login.html',form = form)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    
+    return redirect(url_for('home'))
+
+@app.route('/profile')
+@login_required
+def profile():
+    
+    return render_template('profile.html')
+    
+    
+    
+    
+    
+
   
