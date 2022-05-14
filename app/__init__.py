@@ -1,11 +1,13 @@
 
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY']= 'journal'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+db = SQLAlchemy(app)
 
-@app.route('/')
-def index():
-    message= '<h1>Hello world</h2>'
-    
-    return message
+
+from app import routes
