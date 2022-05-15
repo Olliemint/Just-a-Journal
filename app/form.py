@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import SelectField,SubmitField,StringField,BooleanField,TextAreaField,PasswordField
+from flask_wtf.file import FileAllowed,FileField
+from wtforms import SubmitField,StringField,BooleanField,TextAreaField,PasswordField
 from wtforms.validators import DataRequired,Length,Email,EqualTo,ValidationError
 from app.models import User
 
@@ -41,7 +42,8 @@ class Login(FlaskForm):
     
     
     
-class PitchForm(FlaskForm):
+class NewBlog(FlaskForm):
     title = StringField('Category', validators=[DataRequired()])
-    pitch = TextAreaField('Pitch',validators=[DataRequired()])
+    content = TextAreaField('Pitch',validators=[DataRequired()])
+    picture = FileField('Upload picture',validators=[FileAllowed(['jpg','png'])])
     submit = SubmitField('Add')    

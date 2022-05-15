@@ -5,9 +5,7 @@
 <div class="content-section">
     <form action="" method="POST">
         {{ form.hidden_tag() }}
-        <div class="logo">
-            <img src="../static/assets/1651930619016_1651930610313_p logo.png" alt="">
-        </div>
+        
         <fieldset class="form-group">
             <legend class="border-bottom" id="leg">{{ legend }}</legend>
             
@@ -29,21 +27,34 @@
 
             </div>  
             <div class="form-group">
-                {{ form.pitch.label(class ="form-control-label")}}
+                {{ form.content.label(class ="form-control-label")}}
                 {% if form.pitch.errors %}
-                    {{ form.pitch(class ="form-control form-control-lg is-invalid")}}
+                    {{ form.content(class ="form-control form-control-lg is-invalid")}}
                     <div class="invalid-feedback">
-                        {% for error in form.pitch.errors %}
+                        {% for error in form.content.errors %}
                             <span>{{error}}</span>
                         {% endfor %}
                     </div>
 
                 {% else %}    
-                   {{ form.pitch(class ="form-control form-control-lg")}}
+                   {{ form.content(class ="form-control form-control-lg")}}
                     
                 
                 {% endif %}
 
+            </div>
+            <div class="form-group">
+                {{ form.picture.label()}}
+                {{ form.picture(class="form-control-file")}} 
+                {% if form.picture.errors %}
+
+                    {% for error in form.picture.errors %}
+                        <span class="text-danger">{{error}}</span>
+                    {% endfor %}
+
+                {% endif %}
+
+           
             </div>
      
         </fieldset>

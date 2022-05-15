@@ -19,12 +19,12 @@ class User(db.Model, UserMixin):
         
         return f"User('{self.username}','{self.email}')"
     
+    
 class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title = db.Column(db.String,nullable=False)
-    category = db.Column(db.String,nullable=False)
     content = db.Column(db.String,nullable=False)
-    image = db.Column(db.String(60), nullable=False, default ='default.jpg')
+    image = db.Column(db.String(60), nullable=False)
     posted = db.Column(db.DateTime,nullable = False, default = datetime.utcnow)
     
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
@@ -33,4 +33,4 @@ class Blog(db.Model):
     
     def __repr__(self):
         
-        return f"User('{self.title}','{self.category}','{self.content}','{self.posted}')"    
+        return f"User('{self.title}','{self.content}','{self.posted}')"    
