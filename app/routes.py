@@ -6,6 +6,7 @@ from app.models import User,Blog
 from flask import render_template,url_for,flash,redirect,request,abort
 from flask_login import login_user,current_user,logout_user,login_required
 
+from .quoteApi import get_data
 
 
 
@@ -14,10 +15,11 @@ from flask_login import login_user,current_user,logout_user,login_required
 @app.route('/')
 @app.route('/home')
 def home():
-    
+   
+    quote =get_data()
     blog = Blog.query.all()
     
-    return render_template('home.html',blog=blog)
+    return render_template('home.html',blog=blog, quote=quote)
 
 @app.route('/register',methods=['GET','POST'])
 def register():
@@ -105,7 +107,7 @@ def delete_post(post_id):
 
 
 
-@app.route('/pitch/<int:blog_id>/update',methods=['GET','POST'])
+@app.route('/blog/<int:blog_id>',methods=['GET','POST'])
 @login_required
 def update_blog(blog_id):
     blog = Blog.query.get_or_404(blog_id) 
@@ -122,7 +124,7 @@ def update_blog(blog_id):
         form.title.data = blog.title
         form.content.data = blog.content
     
-    return render_template('newblog.html',form= form, legend ='Update post')   
+    return render_template('newblog.html',form= form, header='Update post')   
 
 
 
