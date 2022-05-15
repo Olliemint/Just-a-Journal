@@ -105,6 +105,27 @@ def delete_post(post_id):
 
 
 
+@app.route('/pitch/<int:blog_id>/update',methods=['GET','POST'])
+@login_required
+def update_blog(blog_id):
+    blog = Blog.query.get_or_404(blog_id) 
+    if blog.author != current_user:
+        abort(403)
+    form = NewBlog()
+    if form.validate_on_submit():
+        blog.title = form.title.data
+        blog.content = form.content.data
+        db.session.commit()
+        flash('Your pitch has been updated','success')
+        return redirect(url_for('home'))
+    elif request.method == 'GET':
+        form.title.data = blog.title
+        form.content.data = blog.content
+    
+    return render_template('newblog.html',form= form, legend ='Update post')   
+
+
+
 
 
     

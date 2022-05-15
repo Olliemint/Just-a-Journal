@@ -54,7 +54,7 @@ html{
       
   }
   #rightside{
-    height: 30vh;
+    height: 80vh;
     background-color: #252830;
 
   }
@@ -99,4 +99,7 @@ html{
   .flex-items a{
     padding-left: 10px;
 
+  }
+  .buttons{
+      margin-top: -10px;
   }

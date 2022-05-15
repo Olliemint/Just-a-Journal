@@ -13,16 +13,14 @@
                         <span><i class="fa-solid fa-clock"></i></span>
                         <span>3 Min read</span>
                     </div>
-
-                    <h3>{{ blog.title }}</h3>>
-                    
-                    <p>{{ blog.content }}</p>
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.content |truncate(100) }}</p>
                     <p><i class="ri-question-answer-line" style="color: lightseagreen;"></i><span>2</span></p>
                     <div class="buttons">
 
                         {% if blog.author == current_user %}
                         <div>
-                           <a class="btn btn btn-outline-info btn-sm m-1" href="">Edit post</a>
+                           <a class="btn btn btn-outline-info btn-sm m-1" href="{{url_for('update_blog',blog_id=blog.id)}}">Edit post</a>
                             
                            <a class="btn btn btn-outline-danger btn-sm m-1" href="{{url_for('delete_post', post_id=blog.id)}}">Delete</a>
 
@@ -39,13 +37,10 @@
                 </div>
                 <div class="card" id="left-items">
                     
-                    <i class="fa-solid fa-house-user"></i>
+                    
 
                     
                 </div>
-                <!-- <div class="card" id="left-items">
-                    
-                </div>
                 <div class="card" id="left-items">
                     
                 </div>
@@ -54,7 +49,10 @@
                 </div>
                 <div class="card" id="left-items">
                     
-                </div> -->
+                </div>
+                <div class="card" id="left-items">
+                    
+                </div>
             </div>
 
             </div>
