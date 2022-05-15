@@ -85,6 +85,19 @@ def logout():
 def profile():
     
     return render_template('profile.html')
+
+
+
+@app.route('/blog/new',methods=['GET','POST'])
+@login_required
+def newblog():
+    
+    
+    
+    return render_template('newblog.html')
+    
+    
+    
     
     
     
