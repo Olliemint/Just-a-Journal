@@ -3,25 +3,11 @@
 from app import app,db,bcrypt
 from app.form import Register,Login,NewBlog
 from app.models import User,Blog
-from flask import render_template,url_for,flash,redirect,request
+from flask import render_template,url_for,flash,redirect,request,abort
 from flask_login import login_user,current_user,logout_user,login_required
 
 
 
-posts = [
-    {
-        'author': 'Corey Schafer',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018'
-    },
-    {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
-    }
-]
 
 
 
@@ -29,9 +15,9 @@ posts = [
 @app.route('/home')
 def home():
     
+    blog = Blog.query.all()
     
-    
-    return render_template('home.html', posts=posts)
+    return render_template('home.html',blog=blog)
 
 @app.route('/register',methods=['GET','POST'])
 def register():
@@ -104,7 +90,23 @@ def newblog():
         return redirect(url_for('home'))
     
     
-    return render_template('newblog.html',form =form)
+    return render_template('newblog.html',form =form, header = 'New Post')
+
+
+@app.route('/blog/delete/<int:post_id>',methods=['POST', 'GET'])
+@login_required
+def delete_post(post_id):
+    posts = Blog.query.get(post_id)
+    if posts.author == current_user:
+        db.session.delete(posts)
+        db.session.commit()
+        flash('Your pitch has been deleted','success')
+    return redirect(url_for('home'))
+
+
+
+
+
     
     
     
