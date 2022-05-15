@@ -39,3 +39,9 @@ class Login(FlaskForm):
     
     submit = SubmitField('Login') 
     
+    
+    
+class PitchForm(FlaskForm):
+    title = StringField('Category', validators=[DataRequired()])
+    pitch = TextAreaField('Pitch',validators=[DataRequired()])
+    submit = SubmitField('Add')    
