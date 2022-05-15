@@ -17,21 +17,15 @@
                     <h3>{{ blog.title }}</h3>>
                     
                     <p>{{ blog.content }}</p>
+                    <p><i class="ri-question-answer-line" style="color: lightseagreen;"></i><span>2</span></p>
                     <div class="buttons">
-                        <span><a href="">Comment</a></span>
-                        <span><a href="">Update</a></span>
-                        <span><a href="">Delete</a></span>
-                        <span><a href="">Delete</a></span>
-                        <span><a href="">{{blog.id}}</a></span>
 
-
-                        
                         {% if blog.author == current_user %}
                         <div>
-                           <a class="btn btn-primary btn-sm m-1" href="">Update</a> 
-                           <a class="btn btn-primary btn-sm m-1" href="{{url_for('delete_post', post_id=blog.id)}}">Delete</a>
+                           <a class="btn btn btn-outline-info btn-sm m-1" href="">Edit post</a>
+                            
+                           <a class="btn btn btn-outline-danger btn-sm m-1" href="{{url_for('delete_post', post_id=blog.id)}}">Delete</a>
 
-                           <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal">Delete</button>
                         </div>
                         {% endif %}
 
