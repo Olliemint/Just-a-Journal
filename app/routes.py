@@ -1,5 +1,7 @@
+
+
 from app import app,db,bcrypt
-from app.form import Register,Login
+from app.form import Register,Login,NewBlog
 from app.models import User,Blog
 from flask import render_template,url_for,flash,redirect,request
 from flask_login import login_user,current_user,logout_user,login_required
@@ -88,13 +90,21 @@ def profile():
 
 
 
+
+
 @app.route('/blog/new',methods=['GET','POST'])
 @login_required
 def newblog():
+    form = NewBlog()
+    if form.validate_on_submit():
+        blog = Blog(title=form.title.data, content=form.content.data,author=current_user )
+        db.session.add(blog)
+        db.session.commit()
+        flash(f'Hello {current_user.username} post has been added', 'success')
+        return redirect(url_for('home'))
     
     
-    
-    return render_template('newblog.html')
+    return render_template('newblog.html',form =form)
     
     
     

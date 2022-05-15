@@ -43,7 +43,6 @@ class Login(FlaskForm):
     
     
 class NewBlog(FlaskForm):
-    title = StringField('Category', validators=[DataRequired()])
-    content = TextAreaField('Pitch',validators=[DataRequired()])
-    picture = FileField('Upload picture',validators=[FileAllowed(['jpg','png'])])
-    submit = SubmitField('Add')    
+    title = StringField('Post Title', validators=[DataRequired()])
+    content = TextAreaField('Content',validators=[DataRequired()])
+    submit = SubmitField('Post')    

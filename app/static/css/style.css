@@ -10,7 +10,7 @@ html{
     scroll-behavior: smooth;
 }
 .container-fluid,#navbar{
-    background-color: #252830 !important;
+    background-color: #0A192F !important;
     height: 7vh;
     
 }
@@ -36,4 +36,67 @@ html{
   .center{
       display: grid;
       place-content: center;
+  }
+  body{
+      background-color: #131417 !important;
+  }
+  .homepage{
+      width: 125%;
+      height: 80vh;
+      background-color: aqua;
+      position: relative;
+      margin-left: -13%;
+  }
+  #leftside{
+      
+      background-color: #131417;
+      display: flex !important;
+      
+  }
+  #rightside{
+    height: 30vh;
+    background-color: #252830;
+
+  }
+  .pagegrid{
+      display: flex;
+      gap: 1%;
+  }
+  #left-items{
+      width: 49%;
+      height: 22vh;
+      background-color: #252830;
+  }
+  .flex-items{
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      
+  }
+  .flex-items p{
+      color: #afb6cd;
+      letter-spacing: 1px;
+      font-size: 18px;
+      padding-left: 10px;
+
+  }
+  .datetime span{
+      color: #ffffff;
+      letter-spacing: 1px;
+      padding: 10px;
+      padding-left: 10px;
+
+
+
+  }
+  .flex-items h3{
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 25px;
+      margin: 2px;
+      padding-left: 10px;
+  }
+  .flex-items a{
+    padding-left: 10px;
+
   }

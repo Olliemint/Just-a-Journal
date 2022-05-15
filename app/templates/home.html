@@ -1,16 +1,62 @@
 {%extends 'base.html' %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="homepage">
+        <div class="pagegrid">
+            <div class="card" style="width: 74%;" id="leftside">
+                <div class="flex-items">
+                <div class="card" id="left-items">
+                    <div class="datetime">
+                        <span>23 Dec 2020</span>
+                        <span><i class="fa-solid fa-clock"></i></span>
+                        <span>3 Min read</span>
+                    </div>
 
-{% for post in posts %}
+                    <h3>Sample title</h3>
+                    
+                    <p>s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    <p>0 comments</p>
+                    <a href="">comment</a>
 
-<div class="card" style="width: 25rem;">
-    <h3>{{post.title}}</h3>
-    <p>{{post.content}}</p>
-    <p>{{post.date_posted}}</p>
+                </div>
+                <div class="card" id="left-items">
+                    
+                </div>
+                <div class="card" id="left-items">
+                    
+                    <i class="fa-solid fa-house-user"></i>
 
+                    
+                </div>
+                <!-- <div class="card" id="left-items">
+                    
+                </div>
+                <div class="card" id="left-items">
+                    
+                </div>
+                <div class="card" id="left-items">
+                    
+                </div>
+                <div class="card" id="left-items">
+                    
+                </div> -->
+            </div>
+
+            </div>
+            <div class="card" id="rightside" style="width: 28%;">
+
+            </div>
+        </div>
+
+    </div>
 </div>
-{% endfor %}
+
+
+
+
+    
+
 
 
 {% endblock %}

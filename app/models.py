@@ -24,7 +24,6 @@ class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title = db.Column(db.String,nullable=False)
     content = db.Column(db.String,nullable=False)
-    image = db.Column(db.String(60), nullable=False)
     posted = db.Column(db.DateTime,nullable = False, default = datetime.utcnow)
     
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
