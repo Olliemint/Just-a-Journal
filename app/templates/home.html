@@ -32,34 +32,66 @@
 
                 </div>
                 {% endfor  %}
-                <div class="card" id="left-items">
-                    
-                </div>
-                <div class="card" id="left-items">
-                    
-                    
-
-                    
-                </div>
-                <div class="card" id="left-items">
-                    
-                </div>
-                <div class="card" id="left-items">
-                    
-                </div>
-                <div class="card" id="left-items">
-                    
-                </div>
-                <div class="card" id="left-items">
-                    
-                </div>
+               
             </div>
 
             </div>
             <div class="card" id="rightside" style="width: 28%;">
-                 <div class="test">
-                <h2>{{ quote.author }}</h2>>
-            </div>
+                 <div class="randomq">
+                     <h3 class="center1">Random Quote</h3>
+                     <p class="center">{{ quote.quote }}</p>
+                     <p class="center">~{{ quote.author }}</p>
+                     
+                 </div>
+                 <div class="trending">
+                     <h3>Trending posts</h3>
+                     <div class="post1">
+                     <div class="imagetrend">
+                         <img src="{{url_for('static',filename='assets/flam.jpg')}}" alt="no image">
+                     </div>
+                     <div class="trenddata">
+                         <h4><a href="https://www.theatlantic.com/culture/archive/2021/04/problem-nature-documentaries/618553/">The atlantic</a></h4>
+                         <p>“Who Owns America’s Wilderness?”</a>
+                          
+                     </div>
+                     <hr>
+                    </div>
+                    <div class="post1">
+                        <div class="imagetrend">
+                            <img src="{{url_for('static',filename='assets/neum.png')}}" alt="no image">
+                        </div>
+                        <div class="trenddata">
+                            <h4><a href="https://userguiding.com/blog/ux-ui-trends/">Neumorphism</a></h4>
+                            <p>Neuromorphic UI’s are elegant..</a>
+                             
+                        </div>
+                        <hr>
+                       </div>
+                       <div class="post1">
+                        <div class="imagetrend">
+                            <img src="{{url_for('static',filename='assets/health.jpeg')}}" alt="no image">
+                        </div>
+                        <div class="trenddata">
+                            <h4><a href="https://www.theatlantic.com/culture/archive/2021/04/problem-nature-documentaries/618553/">Health</a></h4>
+                            <p>COVID-19 cases in the United States have been rising</p>
+                             
+                        </div>
+                        <hr>
+                       </div>
+                       <div class="post1">
+                        <div class="imagetrend">
+                            <img src="{{url_for('static',filename='assets/crypt.jpg')}}" alt="no image">
+                        </div>
+                        <div class="trenddata">
+                            <h4><a href="https://www.theatlantic.com/culture/archive/2021/04/problem-nature-documentaries/618553/"> Cryptocurrency</a></h4>
+                            <p>The Return of Crypto Payments. Presented by Circle.</p>
+                             
+                        </div>
+                        <hr>
+                       </div>
+                    
+
+                 </div>
 
             </div>
         </div>

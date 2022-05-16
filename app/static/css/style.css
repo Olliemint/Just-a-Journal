@@ -10,7 +10,7 @@ html{
     scroll-behavior: smooth;
 }
 .container-fluid,#navbar{
-    background-color: #0A192F !important;
+    background-color: #252830 !important;
     height: 7vh;
     
 }
@@ -43,9 +43,10 @@ html{
   .homepage{
       width: 125%;
       height: 80vh;
-      background-color: aqua;
+     
       position: relative;
       margin-left: -13%;
+      margin-top: 3%;
   }
   #leftside{
       
@@ -103,7 +104,51 @@ html{
   .buttons{
       margin-top: -10px;
   }
-  .test h2{
-      color: #ffffff;
+  .center{
+     text-align: center;
+     color: #afb6cd;
+     letter-spacing: 1px;
+     font-size: 18px;
+  }
+  .randomq{
+      margin-top: 6%;
+  }
+  .center1{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+  }
+  .trending img{
+      width: 100px;
+      height: 100px;
+  }
+  .post1{
+      display: flex;
+      gap: 1%;
+      margin: 10px;
+  }
+  .trending h3{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
 
+  }
+  .trending h4{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    
+
+  }
+  .trending p{
+    color: #afb6cd;
+    letter-spacing: 1px;
+    font-size: 18px;
+  
+
+  }
+  hr{
+      color: #ffffff !important;
   }
