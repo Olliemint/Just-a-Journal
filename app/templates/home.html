@@ -6,10 +6,10 @@
         <div class="pagegrid">
             <div class="card" style="width: 74%;" id="leftside">
                 <div class="flex-items">
-                    {% for blog in blog %}
+                    {% for blog in blog.items %}
                 <div class="card" id="left-items">
                     <div class="datetime">
-                        <span>23 Dec 2020</span>
+                        <span>{{ blog.posted.strftime("%d %b, %Y") }}</span>
                         <span><i class="fa-solid fa-clock"></i></span>
                         <span>3 Min read</span>
                     </div>
@@ -32,8 +32,33 @@
 
                 </div>
                 {% endfor  %}
+
+
+
+    {% for page_num in blog.iter_pages()  %}
+
+
+    <div class="pagebtns">
+
+              
+      
+        {% if page_num %}
+            {% if blog.page == page_num %}
+              <a class="btn btn-secondary btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+            {% else %}
+              <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+    
+          ..
+    
+        {% endif %}
+    </div>
+    {% endfor %}
                
-            </div>
+               </div>
+              
+            
 
             </div>
             <div class="card" id="rightside" style="width: 28%;">
@@ -97,6 +122,12 @@
         </div>
 
     </div>
+
+
+    
+
+   
+     
 </div>
 
 

@@ -1,7 +1,7 @@
 
-
-from app import app,db,bcrypt
-from app.form import Register,Login,NewBlog
+from flask_mail import Message
+from app import app,db,bcrypt,mail
+from app.form import Register,Login,NewBlog,Subscribe
 from app.models import User,Blog
 from flask import render_template,url_for,flash,redirect,request,abort
 from flask_login import login_user,current_user,logout_user,login_required
@@ -17,7 +17,9 @@ from .quoteApi import get_data
 def home():
    
     quote =get_data()
-    blog = Blog.query.all()
+    page = request.args.get('page',1,type=int)
+    blog = Blog.query.order_by(Blog.posted.desc()).paginate(page=page, per_page=6)
+    
     
     return render_template('home.html',blog=blog, quote=quote)
 
@@ -125,6 +127,20 @@ def update_blog(blog_id):
         form.content.data = blog.content
     
     return render_template('newblog.html',form= form, header='Update post')   
+
+
+
+
+
+@app.route('/subscribe',methods=['GET','POST'])
+@login_required
+def subscribe():
+    
+    form= Subscribe()
+    
+     
+    
+    return render_template('subscribe.html',form = form)
 
 
 

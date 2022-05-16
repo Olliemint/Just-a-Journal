@@ -46,3 +46,10 @@ class NewBlog(FlaskForm):
     title = StringField('Post Title', validators=[DataRequired()])
     content = TextAreaField('Content',validators=[DataRequired()])
     submit = SubmitField('Post')    
+    
+    
+class Subscribe(FlaskForm):
+    email = StringField('Email',validators=[DataRequired(),Email()])
+    
+    submit = SubmitField('Subscribe')      
+    

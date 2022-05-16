@@ -33,3 +33,6 @@ class Blog(db.Model):
     def __repr__(self):
         
         return f"User('{self.title}','{self.content}','{self.posted}')"    
+    
+    
+    
