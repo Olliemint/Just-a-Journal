@@ -1,5 +1,4 @@
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileAllowed,FileField
 from wtforms import SubmitField,StringField,BooleanField,TextAreaField,PasswordField
 from wtforms.validators import DataRequired,Length,Email,EqualTo,ValidationError
 from app.models import User
@@ -51,5 +50,11 @@ class NewBlog(FlaskForm):
 class Subscribe(FlaskForm):
     email = StringField('Email',validators=[DataRequired(),Email()])
     
-    submit = SubmitField('Subscribe')      
+    submit = SubmitField('Subscribe')  
+    
+    
+    
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Comment',validators=[DataRequired()])
+    submit = SubmitField('Add')        
     

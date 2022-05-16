@@ -1,7 +1,7 @@
 import unittest
 from app.models import Blog,Comment,User
 
-class TestPitch(unittest.TestCase):
+class TestBlog(unittest.TestCase):
     """
     This is the class which we will use to do tests for the Blog
     """
@@ -25,7 +25,7 @@ class TestPitch(unittest.TestCase):
         """
         Will test whether the new_blog is an instance of Pitch
         """
-        self.assertTrue(isinstance(self.new_pitch, Blog))
+        self.assertTrue(isinstance(self.new_blog, Blog))
 
     def test_init(self):
         """

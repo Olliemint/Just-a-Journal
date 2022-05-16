@@ -15,7 +15,8 @@
                     </div>
                     <h3>{{ blog.title }}</h3>
                     <p>{{ blog.content |truncate(100) }}</p>
-                    <p><i class="ri-question-answer-line" style="color: lightseagreen;"></i><span>2</span></p>
+                    
+                    <a href="{{url_for('comment_post')}}"><i class="ri-question-answer-line" style="color: lightseagreen;">2</i> </a>
                     <div class="buttons">
 
                         {% if blog.author == current_user %}

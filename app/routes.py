@@ -1,8 +1,8 @@
 
-from flask_mail import Message
-from app import app,db,bcrypt,mail
-from app.form import Register,Login,NewBlog,Subscribe
-from app.models import User,Blog
+
+from app import app,db,bcrypt
+from app.form import Register,Login,NewBlog,Subscribe,CommentForm
+from app.models import User,Blog,Comment
 from flask import render_template,url_for,flash,redirect,request,abort
 from flask_login import login_user,current_user,logout_user,login_required
 
@@ -141,6 +141,36 @@ def subscribe():
      
     
     return render_template('subscribe.html',form = form)
+
+
+
+@app.route('/blog/comment',methods=['POST', 'GET'])
+@login_required
+def comment_post():
+    
+    form = CommentForm()
+    
+   
+    if form.validate_on_submit():
+        comments = Comment(comment=form.comment.data, author=current_user)
+        db.session.add(comments)
+        db.session.commit()
+        flash('Your pitch has been updated','success')
+        
+        return redirect(url_for('home'))
+        
+        
+        
+    
+    
+    return render_template('comment.html',form= form)   
+
+
+    
+   
+    
+    
+
 
 
 
