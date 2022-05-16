@@ -39,7 +39,7 @@
             <div class="card" id="rightside" style="width: 28%;">
                  <div class="randomq">
                      <h3 class="center1">Random Quote</h3>
-                     <p class="center">{{ quote.quote }}</p>
+                     <p class="center">{{ quote.quote |truncate(150) }}</p>
                      <p class="center">~{{ quote.author }}</p>
                      
                  </div>

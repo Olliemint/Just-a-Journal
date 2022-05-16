@@ -112,6 +112,7 @@ html{
   }
   .randomq{
       margin-top: 6%;
+
   }
   .center1{
     color: #ffffff;
@@ -126,7 +127,17 @@ html{
   .post1{
       display: flex;
       gap: 1%;
-      margin: 10px;
+      margin: 15px;
+      border-radius: 50px;
+      border-radius: 10px;
+                background: #252830;
+                box-shadow:  5px 5px 0px #17191e,
+                             -5px -5px 0px #333742;   
+
+    
+     
+
+                         
   }
   .trending h3{
     color: #ffffff;
