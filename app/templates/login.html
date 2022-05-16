@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid" id="loginp">
-    <div class="content-section shadow-lg p-3 mb-5 bg-white rounded">
+
+    <div class="place-center">
+    <div class="content-section" id="content">
         <form action="" method="POST">
             {{ form.hidden_tag() }}
             
             <fieldset class="form-group">
-                <legend class="border-bottom" id="leg">Sign in to Pitch</legend>
+                <legend class="border-bottom" id="leg">Sign in</legend>
                 
                 <div class="form-group">
                     {{ form.email.label(class ="form-control-label")}}
@@ -66,6 +67,7 @@
 
     </div>
     </div>
+
 </div>
 
             

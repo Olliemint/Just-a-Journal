@@ -22,14 +22,24 @@ html{
 
 /* form reusable code */
 .content-section {
-    background: #ffffff;
+   
     padding: 10px 20px;
     border: 1px solid #dddddd;
-    border-radius: 3px;
+  
     margin-bottom: 20px;
     width: 40%;
+    /* border-radius: 22px;
+background: #e0e0e0;
+box-shadow:  50px 50px 100px ,
+             -50px -50px 100px; */
+    border-radius: 10px;
+background: #e0e0e0;
+box-shadow:  5px 5px 50px ,
+             -5px -5px 50px;
    
   }
+ 
+ 
   .profile{
       margin-top: 10%;
   }
@@ -173,4 +183,16 @@ html{
   }
 #footer{
     background-color: #ffffff;
+}
+.place-center{
+  
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+.flashed{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+
 }
