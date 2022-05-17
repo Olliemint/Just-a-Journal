@@ -21,7 +21,9 @@ def home():
     blog = Blog.query.order_by(Blog.posted.desc()).paginate(page=page, per_page=6)
     
     
-    return render_template('home.html',blog=blog, quote=quote)
+    blog_comments =  Comment.query.all()
+    
+    return render_template('home.html',blog=blog, quote=quote,blog_comments=blog_comments)
 
 @app.route('/register',methods=['GET','POST'])
 def register():

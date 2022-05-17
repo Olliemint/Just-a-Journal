@@ -18,7 +18,7 @@
 
                    
                     
-                    <a href="{{ url_for('comment_blog',blog_id=blog.id)}}"><i class="ri-question-answer-line" style="color: lightseagreen;">2</i> </a>
+                    <a href="{{ url_for('comment_blog',blog_id=blog.id)}}"><i class="ri-question-answer-line" style="color: lightseagreen;">{{  blog.comments.count(blog_id)}}</i> </a>
                     
                     <div class="buttons">
 
@@ -61,6 +61,12 @@
     {% endfor %}
                
                </div>
+
+               {% for blog_comments in blog_comments %}
+               <div>
+                 <p>{{blog_comments.comment}}</p>  
+               </div>
+               {% endfor %}
               
             
 
