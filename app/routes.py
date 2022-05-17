@@ -19,11 +19,12 @@ def home():
     quote =get_data()
     page = request.args.get('page',1,type=int)
     blog = Blog.query.order_by(Blog.posted.desc()).paginate(page=page, per_page=6)
+   
     
     
-    blog_comments =  Comment.query.all()
     
-    return render_template('home.html',blog=blog, quote=quote,blog_comments=blog_comments)
+    
+    return render_template('home.html',blog=blog, quote=quote)
 
 @app.route('/register',methods=['GET','POST'])
 def register():
@@ -149,7 +150,8 @@ def subscribe():
 @app.route('/blog/comment/<int:blog_id>',methods=['POST','GET'])
 @login_required
 def comment_blog(blog_id):
-   
+    
+    
     
     form = CommentForm()
     post = Blog.query.get(blog_id) 

@@ -111,9 +111,7 @@ box-shadow:  5px 5px 50px ,
     padding-left: 10px;
 
   }
-  .buttons{
-      margin-top: -10px;
-  }
+ 
   .center{
      text-align: center;
      color: #afb6cd;
@@ -194,5 +192,11 @@ box-shadow:  5px 5px 50px ,
     display: flex;
     justify-content: center;
     margin-top: 1%;
+
+}
+.comment a{
+    text-decoration: none;
+
+    
 
 }
