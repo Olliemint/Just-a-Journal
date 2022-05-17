@@ -144,26 +144,27 @@ def subscribe():
 
 
 
-@app.route('/blog/comment',methods=['POST', 'GET'])
+@app.route('/blog/comment/<int:blog_id>',methods=['POST','GET'])
 @login_required
-def comment_post():
+def comment_blog(blog_id):
+   
     
     form = CommentForm()
+    post = Blog.query.get(blog_id) 
     
-   
     if form.validate_on_submit():
-        comments = Comment(comment=form.comment.data, author=current_user)
-        db.session.add(comments)
-        db.session.commit()
-        flash('Your pitch has been updated','success')
-        
+        if post:
+            comment = Comment(comment =form.comment.data, blog_id =blog_id,author = current_user.id)
+            db.session.add(comment)
+            db.session.commit()
+        else:
+            flash('blog not found','danger')
+            
         return redirect(url_for('home'))
-        
-        
-        
+            
+            
+    return render_template('comment.html',form = form)
     
-    
-    return render_template('comment.html',form= form)   
 
 
     

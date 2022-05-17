@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String,unique=True,nullable=False)
     password = db.Column(db.String,nullable =False)
     posts = db.relationship("Blog", backref='author', lazy =True)
+    comments = db.relationship('Comment',backref = 'user',lazy= True)
     
     
     def __repr__(self):
@@ -25,7 +26,7 @@ class Blog(db.Model):
     title = db.Column(db.String,nullable=False)
     content = db.Column(db.String,nullable=False)
     posted = db.Column(db.DateTime,nullable = False, default = datetime.utcnow)
-    comments = db.relationship("Comment", backref='author', lazy =True)
+    comments = db.relationship('Comment',backref = 'blog',lazy= True)
     
     
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
@@ -41,7 +42,8 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     comment = db.Column(db.String,nullable=False)
     commented = db.Column(db.DateTime,nullable = False, default = datetime.utcnow)
-    blog_id = db.Column(db.Integer, db.ForeignKey('blog.id'),nullable=False)
+    author = db.Column(db.Integer,db.ForeignKey('user.id'),nullable = False)
+    blog_id = db.Column(db.Integer,db.ForeignKey('blog.id'),nullable = False)
     
     
     def __repr__(self):
