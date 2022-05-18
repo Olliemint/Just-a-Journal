@@ -3,8 +3,29 @@
 ## Author
 Oliver Maiyo
 
-### DESCRIPTION
-This is a Python-Flask Application that allows users to create one minute pitch. 'You only have 60 seconds to impress someone. 1 minute can make or break you.' The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
+> This is a Flask personal blogging website  application where one can create and share their opinions and other users can read and comment on them. There is also a feature that displays random quotes to inspire users, This feature consumes  an API that allows the  display the random quotes.
+
+
+### Screenshot of the App
+<img src="">
+
+
+## Table of Content
+
++ [Description](#description)
++ [Setup/Installation Requirements](setup&installationrequirements)
++ [How To Access the Site](#howtoaccessthesite)
++ [TDD](#tdd)
++ [UserStory](#userstory)
++ [Technology & Tools](#technology&tools)
++ [Reference](#reference)
++ [Known-Bugs](#knownbugs)
++ [Licence](#licence)
++ [Authors Info](#authors-info)
+
+## Description
+> This is a Flask personal blogging website  application where one can create and share their opinions and other users can read and comment on them. There is also a feature that displays random quotes to inspire users, This feature consumes  an API that allows the  display the random quotes.
+
 
 
 ### Login Inputs
@@ -15,33 +36,31 @@ Password	Account password, eg test
 Signup inputs
 
 Inputs	Description
-Username	Account username, eg msahulu
+Username	Account username, eg Ollie
 Email	User email, eg oliver@gmail.com
 Password	Account password, eg test
 Confirm Password	Account password, eg test
-Pitches inputs
+Blog inputs
 
 Inputs	Description
-Heading	Pitch description eg; Ux/Ui
-Pitch text	The actual pitch body
-Comment	A comment on the pitch
+Heading	Blog title eg; Ux/Ui
+blog text	The actual  blog body
+Comment	A comment on the blog
 
 ### User Story
-* Users can see the pitches other people have posted.
-
-* Users can vote on the pitch they liked and give it a downvote or upvote.
+* Users can see the blogs other people have posted.
 
 * Users can sign in to leave a comment.
 
 * Users can register on the website.
 
-* Users can view the pitches they have created in their profile page..
+* Users can view the blogs they have created in their profile page..
 
-* Users can comment on the different pitches and leave feedback.
+* Users can comment on the different blog .
 
-* Users can submit a pitch in any category.
+* Users can submit a blog in any category.
 
-* Users can view the different categories.
+* Users can view the blogs.
 
 ### Technologies used
 * Python 3.8-10
@@ -51,7 +70,7 @@ Comment	A comment on the pitch
 * Bootstrap3
 
 ### Prerequisites
-To work with Pitch-Up App you need to have some few prerequisites.
+To work with Just-a -Journal App you need to have some few prerequisites.
 
 * Python3.8
 
