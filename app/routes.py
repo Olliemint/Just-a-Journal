@@ -107,7 +107,7 @@ def delete_post(post_id):
     if posts.author == current_user:
         db.session.delete(posts)
         db.session.commit()
-        flash('Your pitch has been deleted','success')
+        flash('Your post has been deleted','success')
     return redirect(url_for('home'))
 
 
@@ -123,7 +123,7 @@ def update_blog(blog_id):
         blog.title = form.title.data
         blog.content = form.content.data
         db.session.commit()
-        flash('Your pitch has been updated','success')
+        flash('Your post has been updated','success')
         return redirect(url_for('home'))
     elif request.method == 'GET':
         form.title.data = blog.title
@@ -140,6 +140,12 @@ def update_blog(blog_id):
 def subscribe():
     
     form= Subscribe()
+    
+    if form.validate_on_submit():
+        
+        flash('Thank you for subscribing','success')
+        return redirect(url_for('home'))
+        
     
      
     
@@ -162,7 +168,7 @@ def comment_blog(blog_id):
             db.session.add(comment)
             db.session.commit()
         else:
-            flash('blog not found','danger')
+            flash('post not found','danger')
             
         return redirect(url_for('home'))
             
