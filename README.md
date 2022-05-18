@@ -108,7 +108,7 @@ python3 run.py test.
 furywrld5@gmail.com
 
 * Live link
-You can view the project through this link   
+You can view the project through this link https://justajournal.herokuapp.com/ 
 
 ## License
 Copyright (c) 2022 Oliver Maiyo
