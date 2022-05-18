@@ -15,7 +15,6 @@ Oliver Maiyo
 + [Description](#description)
 + [Setup/Installation Requirements](setup&installationrequirements)
 + [How To Access the Site](#howtoaccessthesite)
-+ [TDD](#tdd)
 + [UserStory](#userstory)
 + [Technology & Tools](#technology&tools)
 + [Reference](#reference)
