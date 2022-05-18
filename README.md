@@ -7,7 +7,7 @@ Oliver Maiyo
 
 
 ### Screenshot of the App
-<img src="">
+<img src="https://raw.githubusercontent.com/Olliemint/Just-a-Journal/main/app/static/assets/blog_home.png">
 
 
 ## Table of Content
