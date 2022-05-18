@@ -87,7 +87,7 @@ The following command installs all the application requirements
 pip freeze -r requirements.txt
 
 #### Setup
-Run git clone 
+Run git clone https://github.com/Olliemint/Just-a-Journal.git 
 
 
 * Navigate to the project folder
