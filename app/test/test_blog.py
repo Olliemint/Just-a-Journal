@@ -11,7 +11,7 @@ class TestBlog(unittest.TestCase):
         This will create an instance of the User and Blog before each test case
         """
         self.new_user = User(username = "Ollie")
-        self.new_pitch = Blog(title = "hello", user = self.new_user)
+        self.new_blog = Blog(title = "hello", user = self.new_user)
 
     def tearDown(self):
         """
@@ -39,8 +39,8 @@ class TestBlog(unittest.TestCase):
         Will test whether the user is saved into the database
         """
         self.new_blog.save_pitch()
-        pitches = Blog.query.all()
-        self.assertTrue(len(pitches) > 0)
+        blogs = Blog.query.all()
+        self.assertTrue(len(blogs) > 0)
 
     def test_relationship_user(self):
         """

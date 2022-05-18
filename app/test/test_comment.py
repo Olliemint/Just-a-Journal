@@ -40,8 +40,8 @@ class TestComment(unittest.TestCase):
         Will test whether the comment is correctly related to its blog
         """
 
-        pitch_title = self.new_comment.blog.title
-        self.assertTrue(pitch_title == "hello")
+        blog_title = self.new_comment.blog.title
+        self.assertTrue(blog_title == "hello")
 
     def test_relationship_user(self):
         """
