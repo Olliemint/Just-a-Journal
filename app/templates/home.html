@@ -53,9 +53,9 @@
       
         {% if page_num %}
             {% if blog.page == page_num %}
-              <a class="btn btn-secondary btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+              <a class="btn btn-success btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
             {% else %}
-              <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+              <a class="btn btn-outline-success btn-sm" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
             {% endif %}
         {% else %}
     

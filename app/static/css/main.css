@@ -198,3 +198,7 @@ box-shadow:  5px 5px 50px ,
     text-decoration: none;
 
 }
+.navbar-nav{
+    gap: 7%;
+    width: 100%;
+}
