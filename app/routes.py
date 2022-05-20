@@ -197,7 +197,7 @@ def post(blog_id):
 
 # ...
 
-@app.post('/comments/<int:comment_id>/delete')
+@app.post('/blog/single/comments/<int:comment_id>/delete')
 def delete_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     blog_id = comment.blog.id
