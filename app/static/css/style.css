@@ -213,3 +213,6 @@ box-shadow:  29px 29px 43px ,
 .comment-area textarea{
     width: 50%;
 }
+.content{
+    margin-left: 3%;
+}

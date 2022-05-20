@@ -4,8 +4,7 @@
 <div class="single-post">
     <div class="content">
             <div class="post">
-                <p><b>#{{ post.id }}</b></p>
-                <b>
+               
                     <p class="title">{{ post.title }}</p>
                 </b>
                 <div class="content">
@@ -23,18 +22,17 @@
                     </p>
                 
                     <p>
-                        <button type="submit">Add comment</button>
+                        <button type="submit" class="btn btn-outline-success">Add comment</button>
                     </p>
                 </form>
             </div>
                 {% for comment in post.comments %}
                     <div class="comment">
-                        <p>#{{ comment.id }}</p>
                         <p>{{ comment.comment }}</p>
                         <form method="POST"
                         action="{{ url_for('delete_comment',
                                             comment_id=comment.id) }}">
-                        <input type="submit" value="Delete Comment">
+                        <input type="submit" value="Delete" class="btn btn-sm btn-danger">
                             
                     </form>
                     </div>
