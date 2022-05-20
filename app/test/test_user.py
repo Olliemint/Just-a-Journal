@@ -3,7 +3,7 @@ from app.models import User
 
 class UserModelTest(unittest.TestCase):
     def setUp(self):
-        self.user_Ollie = User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
+        self.user_user = User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
         
 
         

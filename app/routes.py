@@ -174,7 +174,41 @@ def comment_blog(blog_id):
             
             
     return render_template('comment.html',form = form)
+
+
+
+@app.route('/blog/single/<int:blog_id>',methods=['POST','GET'])
+@login_required
+def post(blog_id):
+    post = Blog.query.get_or_404(blog_id)
     
+    if request.method == 'POST':
+        comment = Comment(comment=request.form['content'],blog_id =blog_id,author = current_user.id)
+        db.session.add(comment)
+        db.session.commit()
+        flash('comment addded', 'primary')
+        return redirect(url_for('post',blog_id=post.id))
+        
+    
+    
+    return render_template('blog.html', post=post)
+
+
+
+# ...
+
+@app.post('/comments/<int:comment_id>/delete')
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    blog_id = comment.blog.id
+    db.session.delete(comment)
+    db.session.commit()
+    return redirect(url_for('post', blog_id=blog_id))
+
+
+
+
+
 
 
     

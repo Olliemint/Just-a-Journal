@@ -202,3 +202,14 @@ box-shadow:  5px 5px 50px ,
     gap: 7%;
     width: 100%;
 }
+.single-post{
+    margin: 5%;
+    width: 40%;
+    border-radius: 15px;
+background: #E0E0E0;
+box-shadow:  29px 29px 43px ,
+             -29px -29px 43px ;
+}
+.comment-area textarea{
+    width: 50%;
+}

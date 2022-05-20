@@ -10,7 +10,7 @@ class TestComment(unittest.TestCase):
         """
         This will create a new instance of User, Blog and Comment before each test
         """
-        self.user_Ollie = User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
+        self.user_user= User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
 
         self.new_blog = Blog(title = "blog1",content ="my new blog")
 
