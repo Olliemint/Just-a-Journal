@@ -10,17 +10,18 @@ class TestComment(unittest.TestCase):
         """
         This will create a new instance of User, Blog and Comment before each test
         """
+        self.user_Ollie = User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
 
-        self.new_user = User(username = "Ollie")
-        self.new_blog = Blog(title = "hello", user = self.new_user)
-        self.new_comment = Comment(comment = "ux", user = self.new_user, blog = self.new_blog)
+        self.new_blog = Blog(title = "blog1",content ="my new blog")
+
+        self.new_comment = Comment(comment = "ux", author = self.new_user, blog = self.new_blog)
 
     def tearDown(self):
         """
         Will clear the db after each test
         """
         
-        Blog.query.delete()
+        
         Comment.query.delete()
 
     def test_instance(self):

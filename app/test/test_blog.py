@@ -1,5 +1,6 @@
 import unittest
-from app.models import Blog,Comment,User
+
+from app.models import Blog,User
 
 class TestBlog(unittest.TestCase):
     """
@@ -8,10 +9,10 @@ class TestBlog(unittest.TestCase):
 
     def setUp(self):
         """
-        This will create an instance of the User and Blog before each test case
+        This will create an instance of the Blog before each test case
         """
-        self.new_user = User(username = "Ollie")
-        self.new_blog = Blog(title = "hello", user = self.new_user)
+        self.user_Ollie = User(username = "Ollie", email ="oliverkoechrj@gmail.com", password = '1234')
+        self.new_blog = Blog(title = "blog1",content ="my new blog")
 
     def tearDown(self):
         """
@@ -19,26 +20,22 @@ class TestBlog(unittest.TestCase):
         """
         Blog.query.delete()
         User.query.delete()
-        Comment.query.delete()
+    
 
     def test_instance(self):
         """
-        Will test whether the new_blog is an instance of Pitch
+        Will test whether the new_blog is an instance of Blog
         """
-        self.assertTrue(isinstance(self.new_blog, Blog))
+        self.assertEquals(self.new_blog.title,'blog1')
+        self.assertEquals(self.new_blog.content,'my new blog')
 
-    def test_init(self):
-        """
-        Will test whether the new_blog is instantiated correctly
-        """
+  
 
-        self.assertEqual(self.new_blog.title, "hello")
-
-    def test_save_pitch(self):
+    def test_save_blog(self):
         """
         Will test whether the user is saved into the database
         """
-        self.new_blog.save_pitch()
+        self.new_blog.save_blog()
         blogs = Blog.query.all()
         self.assertTrue(len(blogs) > 0)
 
@@ -46,5 +43,17 @@ class TestBlog(unittest.TestCase):
         """
         Will test whether the blog is correctly related to the user who posted it
         """
-        user = self.new_blog.user.name
+        user = self.new_blog.username
         self.assertTrue(user == "Ollie")
+        
+    def test_get_blog_by_id(self):
+    
+        self.new_blog.save_blog()
+        got_blog = Blog.get_blogs(12)
+        self.assertTrue(len(got_blog) == 1)  
+        
+        
+        
+        
+        
+        
